@@ -7,17 +7,22 @@ class longestCommonPrefix {
         String s2 = strs[strs.length-1];
         int len1=s1.length(), len2=s2.length();
         int idx = 0;
-        while(idx < len1 && idx < len2){
-            if(s1.charAt(idx) == s2.charAt(idx)){
+        while(idx < len1 && idx < len2)
+        {
+            if(s1.charAt(idx) == s2.charAt(idx))
+            {
                 idx++;
-            } else {
+            } 
+            else 
+            {
                 break;
             }
         }
         return s1.substring(0, idx);
     }
-    public static void main(String[] args) {
-        String[] s1 = {"dog","racecar","car"};
+    public static void main(String[] args) 
+    {
+        String[] s1 = {"flour","flower","flick"};
         System.out.println(longestCommon(s1));
     }
 }
