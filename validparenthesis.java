@@ -1,65 +1,39 @@
+import java.util.*;
 public class validparenthesis
 {
     public static boolean isValid(String s)     
     {
         
-        char [] c = s.toCharArray();
-        int i = 0;   
-        
-            if (c[i] == '{')
+        Stack<Character> st = new Stack<Character>();
+        for (char c : s.toCharArray())
+        {
+            if (c=='{' || c=='(' || c=='[')
             {
-                for (i = 0; i<c.length; i++)
-                {
-                    if (c[i+1] == '}')
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        i++;
-                    }
-                }
+                st.push(c);
             }
-                    
-            if (c[i] == '(')
-            {
-                for (i = 0; i<c.length; i++)
-                {
-                    if (c[i+1] == ')')
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        i++;
-                    }
-                }
-            }
-                    
-            if (c[i] == '[')
-            {
-                for (i = 0; i<c.length; i++)
-                {
-                    if (c[i+1] == ']')
-                    {
-                        return true;
-                    }
-                     else
-                    {
-                        i++;
-                    }
-                }
-            }
+            else
+            {   
+                if (st.isEmpty())
+                { 
                 return false;
+                }
+                char lastIn = st.peek();
+                if ( (c=='}' && lastIn =='{') || (c==']' && lastIn=='[') || (c==')' && lastIn =='(') ) 
+                {
+                    st.pop(); 
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        return st.isEmpty();
     }
 
-
-
-        
     public static void main(String[] args) 
     {
-        String s1 = "{} () []";
+        String s1 = "{";
         System.out.println(isValid(s1));
-        //System.out.println(isValid(s1));
     }
 }
