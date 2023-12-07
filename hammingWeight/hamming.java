@@ -16,7 +16,7 @@ public class hamming
     
     public static void main(String[] args) 
     {
-        int n = 1111111101;
+        int n = 11;
         System.out.println(hammingWeight(n));
     }
 }

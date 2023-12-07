@@ -26,7 +26,7 @@ class twosum {
 
     public static void main(String[] args) 
     {
-        int [] number = {3,2,3};
+        int [] number = {3,2,4};
         int goal=6;
         int[] dummy = two(number, goal);
         System.out.println(dummy[0] + " " + dummy[1]);
