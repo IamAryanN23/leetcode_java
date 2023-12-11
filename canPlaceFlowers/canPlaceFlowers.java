@@ -15,11 +15,11 @@ public class canPlaceFlowers
                 count ++;
             }
         }
-        return count == n;
+        return count >= n;
     }
     public static void main(String[] args) 
     {
-        int[] flower = {1,0,0,0,1};
+        int[] flower = {0,0,1,0,0};
         int n = 1;
         System.out.println(canFlowers(flower, n)); //Output: true
     }
